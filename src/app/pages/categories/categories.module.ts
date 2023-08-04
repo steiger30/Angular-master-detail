@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
-
-
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     CategoryListComponent,
@@ -13,7 +13,9 @@ import { CategoryFormComponent } from './category-form/category-form.component';
   ],
   imports: [
     CommonModule,
-    CategoriesRoutingModule
+    CategoriesRoutingModule,
+    BreadcrumbModule,
+    ButtonModule
   ]
 })
 export class CategoriesModule { }

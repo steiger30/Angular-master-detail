@@ -1,1 +1,36 @@
-<p>category-list works!</p>
+<div class="mb-5">
+  <p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+</div>
+
+
+<div class="row mb-4">
+  <div class="col-md">
+    <h1 class="h2 border-left pl-2"> Categorias</h1>
+  </div>
+  <div class="col-md">
+    <a routerLink="new" class="btn btn-success float-end">+ Nova categoria</a>
+  </div>
+</div>
+
+<table class="table table-hover ">
+  <thead>
+    <tr class="bg-primary text-light">
+      <th class="text-light">Categorias</th>
+      <th class="text-light">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>Lazer</strong><br>
+        <small>Cinema, parque, praia, etc...</small>
+      </td>
+      <td>
+        <button type="button" [routerLink]="[12,'edit']" class="btn btn-outline-info btn-sm mx-2">Editar</button>
+        <button type="button" (click)="deleteCategory('categoriaId')"
+          class="btn btn-outline-danger btn-sm">Editar</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
