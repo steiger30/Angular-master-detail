@@ -7,6 +7,9 @@ import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarModule } from 'primeng/menubar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import { CategoriesModule } from './pages/categories/categories.module';
+import { InMemoryDatabase } from './in-memory-database';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ButtonModule,
     BrowserAnimationsModule,
     MenubarModule,
-    NgbModule
+    NgbModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
