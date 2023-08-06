@@ -8,9 +8,9 @@ import { Category } from './category.model';
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiPath: string = "api/categories";
+  private apiPath: string = 'api/categories';
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getAll(): Observable<Category[]> {
     return this.http.get(this.apiPath).pipe(
