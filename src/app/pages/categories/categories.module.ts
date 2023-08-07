@@ -7,9 +7,7 @@ import { CategoryFormComponent } from './category-form/category-form.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonModule } from 'primeng/button';
 import { CategoryService } from './shared/category.service';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDatabase } from 'src/app/in-memory-database';
+
 @NgModule({
   declarations: [
     CategoryListComponent,
@@ -20,8 +18,7 @@ import { InMemoryDatabase } from 'src/app/in-memory-database';
     CategoriesRoutingModule,
     BreadcrumbModule,
     ButtonModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase),
+    
 
   ], providers: [CategoryService]
 })
