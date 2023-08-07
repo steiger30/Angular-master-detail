@@ -1,1 +1,36 @@
-<p>category-form works!</p>
+<div class="mb-5">
+  <p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+</div>
+
+
+<div class="row mb-4">
+  <div class="col-md">
+    <h1 class="h2 border-left pl-2">Formulário de categoria</h1>
+  </div>
+  <div class="col-md">
+    <a routerLink="/categories" class="btn btn-light float-end">
+      voltar
+    </a>
+  </div>
+</div>
+
+<form action="">
+  <div class="card">
+    <div class="card-header">
+      Informações sobre a categoria
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control" >
+        </div>
+        <div class="form-group col-md-8">
+          <label for="description">Descrição</label>
+          <input type="text" class="form-control" >
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg float-end mt-3">Salvar</button>
+</form>
