@@ -7,6 +7,7 @@ import { CategoryFormComponent } from './category-form/category-form.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonModule } from 'primeng/button';
 import { CategoryService } from './shared/category.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { CategoryService } from './shared/category.service';
     CategoriesRoutingModule,
     BreadcrumbModule,
     ButtonModule,
-    
+    ReactiveFormsModule
 
   ], providers: [CategoryService]
 })
