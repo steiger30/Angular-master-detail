@@ -19,9 +19,8 @@ export class CategoryService {
     )
   }
 
-  getById(id: number): Observable<Category> {
+  getById(id: any): Observable<Category> {
     const url = `${this.apiPath}/${id}`;
-
     return this.http.get(url).pipe(
       catchError(this.handleError),
       map(this.jsonDataToCategory)
@@ -29,7 +28,11 @@ export class CategoryService {
   }
 
   create(category: Category): Observable<Category> {
-    return this.http.post(this.apiPath, category).pipe(
+    const params = {
+      "name": category.name,
+      "description": category.description,
+    }
+    return this.http.post(this.apiPath, params).pipe(
       catchError(this.handleError),
       map(this.jsonDataToCategory)
     )

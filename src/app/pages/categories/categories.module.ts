@@ -8,7 +8,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonModule } from 'primeng/button';
 import { CategoryService } from './shared/category.service';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     CategoryListComponent,
@@ -19,8 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CategoriesRoutingModule,
     BreadcrumbModule,
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule
 
-  ], providers: [CategoryService]
+  ], providers: [CategoryService, MessageService]
 })
 export class CategoriesModule { }
