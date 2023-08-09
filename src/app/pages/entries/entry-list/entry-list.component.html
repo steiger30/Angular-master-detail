@@ -1,0 +1,47 @@
+<div class="mb-5">
+  <p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+</div>
+
+
+<div class="row mb-4">
+  <div class="col-md">
+    <h1 class="h2 border-left pl-2"> Lançamentos</h1>
+  </div>
+  <div class="col-md">
+    <a routerLink="new" class="btn btn-success float-end">+ Novo Lançamentos</a>
+  </div>
+</div>
+
+<table class="table table-hover ">
+  <thead>
+    <tr class="bg-primary text-light">
+      <th class="text-light">Lançamento</th>
+      <th class="text-light">Categpria</th>
+      <th class="text-light text-end">Valor R$</th>
+      <th class="text-light text-center">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of entries">
+      <td>
+        <strong>{{entry.name}}</strong><br>
+        <small class="text-success">{{entry.date}}</small><br>
+        <small *ngIf="entry.description">{{entry.description}}</small><br>
+      </td>
+      <td>
+        {{entry.category!.name}}
+      </td>
+      <td class="text-end">
+        <strong [class]="entry.type === 'revenue'? 'text-success' : 'text-danger'">
+          {{entry.amount}}
+        </strong>
+        <br>
+        <span class="badge bg-light text-dark px-0">{{entry.paidText}}</span>
+      </td>
+      <td class="text-center">
+        <button type="button" [routerLink]="[entry.id,'edit']" class="btn btn-outline-info btn-sm mx-2">Editar</button>
+        <button type="button" (click)="deleteEntry(entry)" class="btn btn-outline-danger btn-sm">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
